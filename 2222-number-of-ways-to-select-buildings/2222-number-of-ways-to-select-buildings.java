@@ -1,31 +1,27 @@
 class Solution {
     public long numberOfWays(String s) {
-        List<Integer> zeros = new ArrayList<Integer>();
-        List<Integer> ones = new ArrayList<Integer>();
+        int zeros =0,ones=0;
         for(int i=0;i<s.length();i++){
             if(s.charAt(i)=='0'){
-                zeros.add(i);
+                zeros++;
             }else{
-                ones.add(i);
+                ones++;
             }
         }
         
-        //take 010
+        //take 010 & 101
         long ans = 0;
-        for(int i=0;i<ones.size();i++){
-            int pos = Collections.binarySearch(zeros,ones.get(i));
-            pos = Math.abs(pos)-1;
-           //System.out.println(pos);
-            ans+=(pos*(zeros.size()-pos));
-        }
-        //take 101
-        for(int i=0;i<zeros.size();i++){
-                int pos = Collections.binarySearch(ones,zeros.get(i));
-                pos = Math.abs(pos)-1;
-                //System.out.println(pos);
-                ans+=(pos*(ones.size()-pos));
+        int currentZeros = s.charAt(0)=='0'? 1:0;
+        int currentOnes = s.charAt(0)=='1'? 1:0;
+        for(int i=1;i<s.length();i++){
+            if(s.charAt(i) == '0'){
+                ans+=currentOnes*(ones-currentOnes);
+                currentZeros++;
+            }else{
+                ans+=currentZeros*(zeros-currentZeros);
+                currentOnes++;
             }
-       
+        }
         return ans;
         
     }
