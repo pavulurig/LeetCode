@@ -1,6 +1,6 @@
 class Solution {
     public int maximumCandies(int[] candies, long k) {
-        int left=0;
+        int left=1;
         int ca [] = candies;
         Arrays.sort(ca);
        
@@ -13,7 +13,7 @@ class Solution {
         if(sum<k) return 0;
         int ans=0;
         while(left<=right){
-            int mid =  (left + right+1) / 2;
+            int mid =  (left+right)/2;
             if(helper(mid,candies,k) == true){
                 ans = mid;
                 left = mid+1;
