@@ -1,4 +1,7 @@
 class Solution {
+    
+    //TimeComplexity: N*M(N+M)
+    //Space Complexity : Q(N*M)
     int vis[][] = new int[1000][1000];
     public int countBattleships(char[][] board) {
         int n = board.length;
