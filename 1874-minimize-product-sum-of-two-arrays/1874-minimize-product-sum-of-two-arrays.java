@@ -1,5 +1,6 @@
 class Solution {
     public int minProductSum(int[] nums1, int[] nums2) {
+        //TimeComplexity : N*LOGN
         Arrays.sort(nums1);
         Arrays.sort(nums2);
         int j = nums1.length-1;
