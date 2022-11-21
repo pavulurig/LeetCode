@@ -28,8 +28,6 @@ class Solution {
                 qq.add(new Node(ll.get(i),nn.b+informTime[ll.get(i)]));    
             }
         }
-      
-        
         return ans;
     }
 }
