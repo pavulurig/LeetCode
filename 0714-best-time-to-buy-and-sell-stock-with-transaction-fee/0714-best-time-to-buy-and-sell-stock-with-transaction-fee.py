@@ -1,6 +1,6 @@
 class Solution:
     def maxProfit(self, prices: List[int], fee: int) -> int:
-        @lru_cache(maxsize = 100)
+        @lru_cache(maxsize = 10)
         def f(i,j):
             if i >= len(prices):
                 return 0
