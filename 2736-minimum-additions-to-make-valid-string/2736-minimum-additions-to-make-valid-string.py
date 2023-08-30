@@ -4,17 +4,23 @@ class Solution:
         find = ""
         ans = 0
         for w in word:
-            if find == "":
+            if find == "" or find[-1] < w:
                 find+=w
-            elif find[-1] < w:
-                find+=w
+           
             else:
-                print(possible[find],find)
+                #print(possible[find],find)
                 ans+=possible[find]
                 find= ""
                 find+=w
-            #print(find)
+           
         if find!="":
             ans+=possible[find]
 
         return ans
+
+        abca
+        ke = ""
+        key = abc
+        a
+        c<a
+        key = ""
