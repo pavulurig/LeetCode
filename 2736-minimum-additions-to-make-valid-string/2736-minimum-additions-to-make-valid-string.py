@@ -1,26 +1,23 @@
 class Solution:
     def addMinimum(self, word: str) -> int:
-        possible = {'a':2,'b':2,'c':2,"ab":1,'bc':1,"ac":1,"abc":0}
-        find = ""
+        check = "abc"
+        i = 0
+        j = 0
+        start = 0
         ans = 0
-        for w in word:
-            if find == "" or find[-1] < w:
-                find+=w
-           
+        while i < len(word):
+            if word[i] == check[j]:
+                start = i
+                i+= 1
+                j+= 1
             else:
-                #print(possible[find],find)
-                ans+=possible[find]
-                find= ""
-                find+=w
-           
-        if find!="":
-            ans+=possible[find]
-
+                ans+= 1
+                j+= 1
+            
+            if j%3 == 0:
+                j = j%3
+                i = start+1
+                start = i
+        if j != 0 :
+            ans+= (3-j)
         return ans
-
-        abca
-        ke = ""
-        key = abc
-        a
-        c<a
-        key = ""
