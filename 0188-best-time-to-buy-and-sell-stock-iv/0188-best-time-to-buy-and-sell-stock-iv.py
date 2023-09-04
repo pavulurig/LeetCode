@@ -9,5 +9,4 @@ class Solution:
                         dp[i][j][l] = max(-prices[i]+dp[i+1][j][0],dp[i+1][j][1])
                     else:
                         dp[i][j][l] = max(prices[i]+dp[i+1][j+1][1],dp[i+1][j][0])
-        print(dp)
         return dp[0][0][1]
