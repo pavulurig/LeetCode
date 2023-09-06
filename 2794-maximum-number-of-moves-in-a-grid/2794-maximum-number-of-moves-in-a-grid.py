@@ -10,13 +10,15 @@ class Solution:
             for x,y in possible_moves:
                 next_i = i+x
                 next_j = j+y
-                if 0 <= next_i < n and next_j<m and grid[i][j] < grid[next_i][next_j]:
+                if 0<= next_i < n and 0<=next_j<m and grid[i][j] < grid[next_i][next_j]:
                     fans=max(fans,1+dp(next_i,next_j))
             return fans
 
 
         ans = 0
-        return max(dp(i, 0) for i in range(n))
+        for i in range(n):
+            ans = max(ans,dp(i,0))
+        return ans
         
            
         
