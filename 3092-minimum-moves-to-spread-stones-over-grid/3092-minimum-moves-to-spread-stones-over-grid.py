@@ -10,8 +10,9 @@ class Solution:
                 elif grid[i][j]>1:
                     for _ in range(grid[i][j]-1):
                         more_than_one.append([i,j])
-        
-        for perm in permutations(more_than_one, len(zero)):
+        # print(more_than_one)
+        # print(zero)
+        for perm in permutations(more_than_one):
             #print(perm)
             total_distance = 0
             for i in range(len(zero)):
