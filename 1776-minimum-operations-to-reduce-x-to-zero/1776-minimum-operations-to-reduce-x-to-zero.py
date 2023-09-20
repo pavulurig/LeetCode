@@ -13,10 +13,9 @@ class Solution:
             elif nums[j]+summ == look:
                 summ+=nums[j]
                 ans = max(ans,j-i+1)
-                j+=1
+                j+=1   
             else:
                 summ-=nums[i]
                 i+=1
-        
         return len(nums)-ans if ans>0 else -1
         
