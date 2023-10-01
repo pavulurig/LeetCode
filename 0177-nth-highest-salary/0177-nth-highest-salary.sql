@@ -3,7 +3,7 @@ BEGIN
 Declare M INT;
 SET M = N-1;
  RETURN (
-      select DISTINCT salary from Employee 
-       order by salary desc limit M, 1
+      select distinct salary from Employee 
+       order by salary desc limit M ,1
   );
 END
