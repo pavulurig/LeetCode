@@ -1,21 +1,16 @@
-from sortedcontainers import SortedList
+'''
+     Binary Search & Ordered List
+'''
 class Solution:
     def minAbsoluteDifference(self, nums: List[int], x: int) -> int:
-        sorted_array = SortedList(key = lambda k : k[0])
-        '''
-            Time : O((n-x)*logn(n))
-        '''
+        sorted_array = []
         min_ans = abs(nums[0] - nums[-1])
         for i in range(x,len(nums)):
-            insertt = (nums[i-x],i-x)
-            sorted_array.add(insertt) # log(n)
-            pos = sorted_array.bisect_left((nums[i],i)) # log(n)
-            if len(sorted_array) >= pos+1:
-                min_ans = min(min_ans,abs(sorted_array[pos][0]-nums[i]))
-            if len(sorted_array) >= pos+2:
-                min_ans = min(min_ans,abs(sorted_array[pos+1][0]-nums[i]))
-            min_ans = min(min_ans,abs(sorted_array[pos-1][0]-nums[i]))
-               
+            insort(sorted_array,nums[i-x])
+            pos = bisect_left(sorted_array,nums[i])
+            if pos < len(sorted_array):
+                min_ans = min(min_ans,abs(sorted_array[pos]-nums[i]))
+            min_ans = min(min_ans,abs(sorted_array[pos-1]-nums[i]))  
         return min_ans
 
         
