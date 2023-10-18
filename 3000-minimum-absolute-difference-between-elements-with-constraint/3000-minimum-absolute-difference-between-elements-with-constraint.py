@@ -1,7 +1,7 @@
 class Solution:
     def minAbsoluteDifference(self, nums: List[int], x: int) -> int:
         sorted_array = []
-        #lct:orderedset,binarysearch;
+        #lct: orderedset,binarysearch;
         min_ans = abs(nums[0] - nums[-1])
         for i in range(x,len(nums)):
             insort(sorted_array,nums[i-x]) 
