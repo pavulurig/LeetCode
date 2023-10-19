@@ -1,7 +1,7 @@
 class Solution:
     def minProcessingTime(self, processorTime: List[int], tasks: List[int]) -> int:
         #lct: sorting;
-        #lcd: M_5;
+        #lcd: M_10;
         processorTime.sort()
         tasks.sort()
         j = 0
