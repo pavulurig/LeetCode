@@ -1,4 +1,6 @@
 class Solution:
+    #lct:prefixsum;
+    #lcd:E_1;
     def largestAltitude(self, gain: List[int]) -> int:
         alt = [0]
         ans = 0
